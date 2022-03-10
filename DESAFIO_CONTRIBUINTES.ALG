@@ -1,4 +1,47 @@
+funcao impostoSobreSalario(quantia: real) : real
+inicio
+   se quantia < 36000 entao
+      retorne quantia * 0
+   senao
+      se  quantia <= 60000 entao
+         retorne  quantia * 0.10
+      senao
+         retorne  quantia * 0.20
+      fimse
+   fimse
+fimfuncao
 
+funcao impostoSobreServicos(quantia: real) : real
+inicio
+   retorne quantia * 0.15
+fimfuncao
+
+funcao impostoSobreGC(quantia: real) : real
+inicio
+   retorne quantia * 0.20
+fimfuncao
+
+funcao impostoBrutoTotal(salario: real; servicos: real; gc: real) : real
+inicio
+   retorne  impostoSobreSalario(salario) + impostoSobreServicos(servicos) +  impostoSobreGC(gc)
+fimfuncao
+
+funcao abatimento(salario: real; servicos: real; gc: real; gastosMedicos: real; gastosEducacionais: real) : real
+var
+   aux : real
+   totalGastos : real
+
+inicio
+   aux <- impostoBrutoTotal(salario, servicos, gc) * 0.30
+
+   totalGastos <- gastosMedicos + gastosEducacionais
+
+   se aux > totalGastos   entao
+      retorne totalGastos
+   senao
+      retorne aux
+   fimse
+fimfuncao
 
 algoritmo "desafio_contribuintes"
 
