@@ -10,11 +10,6 @@ var
    ganhoCapital :  vetor[0..9] de real
    gastosMedicos :  vetor[0..9] de real
    gastosEducacionais :  vetor[0..9] de real
-
-//   valorImposto :  vetor[0..9] de real    Não precisava
-//   valorServico :  vetor[0..9] de real    Não precisava
-//   valorCapital :  vetor[0..9] de real    Não precisava
-
    valorImpostoBruto :  vetor[0..9] de real
    valorAbatimento :  vetor[0..9] de real
    impostoDevido: vetor[0..9] de real
@@ -43,15 +38,6 @@ inicio
 
    para i de 0 ate N-1 faca
 
- //     valorImposto[i] <- impostoSobreSalario(rendaSalario[i])    Não precisava
-
-   //   se pretacaoServico[i] <> 0 entao    Não precisava
-  //       valorServico[i] <- impostoSobreServicos(pretacaoServico[i])  Não precisava
-//      fimse             Não precisava
-
-  //    se ganhoCapital[i] <> 0 entao   Não precisava
-//         valorCapital[i] <- impostoSobreGC(ganhoCapital[i])     Não precisava
-//      fimse     Não precisava
 
       valorImpostoBruto[i] <- impostoBrutoTotal(rendaSalario[i], pretacaoServico[i], ganhoCapital[i])
 
